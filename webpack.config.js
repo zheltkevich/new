@@ -32,6 +32,7 @@ module.exports = {
             '@docs': path.resolve(__dirname, 'public/assets/docs/'),
             '@fonts': path.resolve(__dirname, 'public/assets/fonts/'),
             '@images': path.resolve(__dirname, 'public/assets/images/'),
+            '@icons': path.resolve(__dirname, 'public/assets/icons/'),
             '@': path.resolve(__dirname, 'src/'),
             '@css': path.resolve(__dirname, 'src/styles/css/'),
             '@scss': path.resolve(__dirname, 'src/styles/scss/'),
@@ -70,14 +71,14 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[contenthash][ext]',
+                    filename: 'assets/images/[contenthash][ext]',
                 },
             },
             {
                 test: /\.(ttf|otf|eot|woff|woff2)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'fonts/[contenthash][ext]',
+                    filename: 'assets/fonts/[contenthash][ext]',
                 },
             },
         ],

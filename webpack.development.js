@@ -36,10 +36,6 @@ module.exports = {
                     from: 'public/manifest.json',
                     to: '.',
                 },
-                {
-                    from: 'public/app-icons/',
-                    to: './app-icons/',
-                },
             ],
         }),
         new StylelintPlugin({
