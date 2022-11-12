@@ -4,7 +4,7 @@
 set -e
 
 git checkout --orphan production
-git commit -m production
+git commit -am production
 git push origin HEAD:production --force
 git checkout -f master
 git branch -D production
