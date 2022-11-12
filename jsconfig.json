@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "esnext",
+        "moduleResolution": "node",
+        // "checkJs": true,
+        "baseUrl": "/"
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
+    "paths": {
+        "@": [
+            "src/"
+        ]
+    },
+    "lib": [
+        "esnext",
+        "dom",
+        "dom.iterable",
+        "scripthost"
+    ]
+}
