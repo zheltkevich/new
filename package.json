@@ -22,10 +22,11 @@
     },
     "scripts": {
         "build": "webpack --node-env=production --progress",
-        "build-audit": "webpack --node-env=development --hot --watch --progress",
+        "build-audit": "webpack --node-env=development --watch --progress && http-server dist",
         "dev": "webpack serve --node-env=development --open --hot --progress",
         "lint:css": "stylelint \"./src/**/*.{css,sass,scss,vue}\" --quiet --fix",
-        "lint:js": "eslint ./src --ext .js,.vue --quiet --fix"
+        "lint:js": "eslint ./src --ext .js,.vue --quiet --fix",
+        "deploy": "sh ./scripts/deploy.sh"
     },
     "gitHooks": {
         "pre-commit": "lint-staged"
@@ -47,6 +48,7 @@
         "eslint-plugin-vue": "^9.7.0",
         "eslint-webpack-plugin": "^3.2.0",
         "html-webpack-plugin": "^5.5.0",
+        "http-server": "^14.1.1",
         "lint-staged": "^13.0.3",
         "mini-css-extract-plugin": "^2.6.1",
         "postcss": "^8.4.19",
