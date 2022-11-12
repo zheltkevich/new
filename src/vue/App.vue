@@ -1,9 +1,10 @@
 <template>
     <router-link to="/">
-        Go to Home
+        Home
     </router-link>
+    ||
     <router-link to="/about">
-        Go to About
+        About
     </router-link>
     <router-view :key="$route.path" />
 </template>
