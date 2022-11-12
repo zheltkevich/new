@@ -1,22 +1,72 @@
 {
-  "name": "vue-template",
-  "version": "0.0.1",
-  "description": "description",
-  "keywords": [
-    "test"
-  ],
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zheltkevich/new.git"
-  },
-  "author": "author",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zheltkevich/new/issues"
-  },
-  "homepage": "https://github.com/zheltkevich/new#readme"
+    "name": "vue-template",
+    "version": "0.0.1",
+    "description": "description",
+    "keywords": [
+        "test"
+    ],
+    "author": "author",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zheltkevich/new.git"
+    },
+    "bugs": {
+        "url": "https://github.com/zheltkevich/new/issues"
+    },
+    "homepage": "https://github.com/zheltkevich/new#readme",
+    "private": true,
+    "engines": {
+        "npm": ">=8.0.0 <9.0.0",
+        "node": ">=18.0.0 <19.0.0"
+    },
+    "scripts": {
+        "build": "webpack --node-env=production --progress",
+        "dev": "webpack serve --node-env=development --open --hot --progress",
+        "lint:css": "stylelint \"./src/**/*.{css,sass,scss,vue}\" --quiet --fix",
+        "lint:js": "eslint ./src --ext .js,.vue --quiet --fix"
+    },
+    "gitHooks": {
+        "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+        "*.{js,vue}": "npm run lint:js",
+        "*.{css,sass,scss,vue}": "npm run lint:css"
+    },
+    "dependencies": {
+        "vue": "^3.2.45"
+    },
+    "devDependencies": {
+        "@babel/eslint-parser": "^7.19.1",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.7.1",
+        "css-minimizer-webpack-plugin": "^4.2.2",
+        "eslint": "^8.27.0",
+        "eslint-plugin-vue": "^9.7.0",
+        "eslint-webpack-plugin": "^3.2.0",
+        "html-webpack-plugin": "^5.5.0",
+        "lint-staged": "^13.0.3",
+        "mini-css-extract-plugin": "^2.6.1",
+        "postcss": "^8.4.19",
+        "postcss-html": "^1.5.0",
+        "postcss-loader": "^7.0.1",
+        "postcss-scss": "^4.0.5",
+        "sass": "^1.56.1",
+        "sass-loader": "^13.2.0",
+        "style-loader": "^3.3.1",
+        "stylelint": "^14.14.1",
+        "stylelint-config-recommended-vue": "^1.4.0",
+        "stylelint-config-standard": "^29.0.0",
+        "stylelint-config-standard-scss": "^6.1.0",
+        "stylelint-order": "^5.0.0",
+        "stylelint-scss": "^4.3.0",
+        "stylelint-webpack-plugin": "^3.3.0",
+        "vue-eslint-parser": "^9.1.0",
+        "vue-loader": "^17.0.1",
+        "vue-template-compiler": "^2.7.14",
+        "webpack": "^5.75.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.11.1",
+        "yorkie": "^2.0.0"
+    }
 }
