@@ -34,7 +34,8 @@
         "*.{css,sass,scss,vue}": "npm run lint:css"
     },
     "dependencies": {
-        "vue": "^3.2.45"
+        "vue": "^3.2.45",
+        "vue-router": "^4.1.6"
     },
     "devDependencies": {
         "@babel/eslint-parser": "^7.19.1",
