@@ -1,20 +1,22 @@
 // Modules/Plugins
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const productionConfig = require('./config/production.js');
+const developmentConfig = require('./config/development.js');
 
 // Configuration utils
 const getMode = () => process.env.NODE_ENV;
 const isProductionMode = getMode() === 'production';
 const isDevelopmentMode = getMode() === 'development';
 const resolveSettings = () => {
-    if (isProductionMode) return require('./webpack.production.js');
-    else if (isDevelopmentMode) return require('./webpack.development.js');
+    if (isProductionMode) return productionConfig;
+    else if (isDevelopmentMode) return developmentConfig;
 };
+const { devtoolConfig, devServerConfig, pluginsConfig, moduleConfig, optimizationConfig, outputConfig } = resolveSettings();
 const printMessage = () => {
     if (isProductionMode) return '=====================\n|| Production mode ||\n=====================\n';
     else if (isDevelopmentMode) return '######################\n** Development mode **\n######################\n';
 };
-const { devtool, devServer, plugins, optimization, output } = resolveSettings();
 
 console.info(printMessage()); // eslint-disable-line no-console
 
@@ -24,12 +26,11 @@ module.exports = {
     entry: {
         index: path.resolve(__dirname, 'src/app.js'),
     },
-    devtool,
-    devServer,
+    devtool: devtoolConfig,
+    devServer: devServerConfig,
     stats: 'minimal',
     resolve: {
         alias: {
-            '@docs': path.resolve(__dirname, 'public/assets/docs/'),
             '@fonts': path.resolve(__dirname, 'public/assets/fonts/'),
             '@images': path.resolve(__dirname, 'public/assets/images/'),
             '@icons': path.resolve(__dirname, 'public/assets/icons/'),
@@ -43,46 +44,8 @@ module.exports = {
             '@components': path.resolve(__dirname, 'src/vue/components/'),
         },
     },
-    plugins,
-    module: {
-        rules: [
-            {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-            },
-            {
-                test: /\.(sa|sc|c)ss$/,
-                use: [
-                    isProductionMode ? MiniCssExtractPlugin.loader : 'style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            additionalData: '// Additional data is working!!!',
-                        },
-                    },
-                ],
-                generator: {
-                    filename: 'styles/[name][ext]',
-                },
-            },
-            {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'assets/images/[contenthash][ext]',
-                },
-            },
-            {
-                test: /\.(ttf|otf|eot|woff|woff2)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'assets/fonts/[contenthash][ext]',
-                },
-            },
-        ],
-    },
-    optimization,
-    output,
+    plugins: pluginsConfig,
+    module: moduleConfig,
+    optimization: optimizationConfig,
+    output: outputConfig,
 };
