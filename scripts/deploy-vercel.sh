@@ -5,7 +5,7 @@ set -e
 
 git checkout --orphan production
 npm run build
-git --work-tree add --all
+git --work-tree add .
 git --work-tree commit -m production
 git push origin HEAD:production --force
 git checkout -f master
