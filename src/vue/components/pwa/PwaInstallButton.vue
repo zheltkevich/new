@@ -19,7 +19,15 @@ export default {
     methods: {
         ...mapActions('pwa', ['setupInstallButton']),
     },
+    watch: {
+        showPromotion(val) {
+            // eslint-disable-next-line no-console
+            console.log('watch: ', val);
+        },
+    },
     mounted() {
+        // eslint-disable-next-line no-console
+        console.log('mounted: ', this.showPromotion);
         this.setupInstallButton(this.$refs.pwaInstallButton);
     },
 };

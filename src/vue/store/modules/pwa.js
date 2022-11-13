@@ -37,7 +37,7 @@ export default {
                 // eslint-disable-next-line no-console
                 console.log('payload: ', payload);
                 state.deferredPrompt = e;
-                state.showPromotion = payload;
+                state.showPromotion = true;
                 // eslint-disable-next-line no-console
                 console.log('state.showPromotion: ', state.showPromotion);
                 // Update UI notify the user they can install the PWA
