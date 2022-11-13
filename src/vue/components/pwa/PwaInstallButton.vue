@@ -1,5 +1,6 @@
 <template>
     <button
+        ref="pwaInstallButton"
         id="install-button"
         class="pwa-install-button"
         type="button">
@@ -8,11 +9,11 @@
 </template>
 
 <script>
-import PWA from '@pwa/pwa.js';
+import setupInstallButton from '@pwa/setupInstallButton.js';
 export default {
     name: 'PwaInstallButton',
     mounted() {
-        PWA.setupInstallButton();
+        setupInstallButton(this.$refs.pwaInstallButton);
     },
 };
 </script>

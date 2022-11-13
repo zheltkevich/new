@@ -1,25 +1,6 @@
-// Register service worker
-// export const registerSW = () => {
-//     if ('serviceWorker' in navigator) {
-//         window.addEventListener('load', () => {
-//             navigator.serviceWorker.register('./service-worker.js')
-//                 .then(registration => {
-//                     console.log('SW registered: ', registration); // eslint-disable-line no-console
-//                 })
-//                 .catch(registrationError => {
-//                     console.log('SW registration failed: ', registrationError); // eslint-disable-line no-console
-//                 });
-//         });
-//     }
-// };
-
-// Add the install button
-export const setupInstallButton = () => {
+export const setupInstallButton = element => {
     let promptEvent = null;
-    const installButton = document.querySelector('#install-button');
-
-    installButton.style.display = 'none';
-
+    const installButton = element;
     const userChoiseHandler = () => {
         promptEvent.prompt();
         promptEvent.userChoice.then(choise => {
@@ -48,9 +29,4 @@ export const setupInstallButton = () => {
     });
 };
 
-const PWA = {
-    // registerSW,
-    setupInstallButton,
-};
-
-export default PWA;
+export default setupInstallButton;
