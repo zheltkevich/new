@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
     name: 'App',
     data() {
@@ -17,11 +18,13 @@ export default {
         },
     },
     methods: {
+        ...mapActions('pwa', ['initAppInstall']),
         testMethod() {
             this.test = this.ggg;
         },
     },
     mounted() {
+        this.initAppInstall();
         this.testMethod();
     },
 };

@@ -1,5 +1,7 @@
 <template>
     <button
+        v-show="showPromotion"
+        ref="pwaInstallButton"
         id="install-button"
         class="pwa-install-button"
         type="button">
@@ -8,14 +10,17 @@
 </template>
 
 <script>
-// import setupInstallButton from '@pwa/setupInstallButton.js';
+import { mapGetters, mapActions } from 'vuex';
 export default {
     name: 'PwaInstallButton',
-    // mounted() {
-    //     // eslint-disable-next-line no-console
-    //     console.log('mounted: ', this.$refs.pwaInstallButton);
-
-    //     if (this.$refs.pwaInstallButton) setupInstallButton(this.$refs.pwaInstallButton);
-    // },
+    computed: {
+        ...mapGetters('pwa', ['showPromotion']),
+    },
+    methods: {
+        ...mapActions('pwa', ['setupInstallButton']),
+    },
+    mounted() {
+        this.setupInstallButton(this.$refs.pwaInstallButton);
+    },
 };
 </script>
