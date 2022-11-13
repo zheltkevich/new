@@ -1,6 +1,9 @@
 export const setupInstallButton = element => {
     let promptEvent = null;
     const installButton = element;
+
+    installButton.style.display = 'none';
+
     const userChoiseHandler = () => {
         promptEvent.prompt();
         promptEvent.userChoice.then(choise => {
