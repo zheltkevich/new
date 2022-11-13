@@ -9,7 +9,6 @@
 
 <script>
 // import setupInstallButton from '@pwa/setupInstallButton.js';
-import '@pwa/pwaInstall.js';
 export default {
     name: 'PwaInstallButton',
     // mounted() {
