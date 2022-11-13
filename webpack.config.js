@@ -35,6 +35,7 @@ module.exports = {
             '@images': path.resolve(__dirname, 'public/assets/images/'),
             '@icons': path.resolve(__dirname, 'public/assets/icons/'),
             '@': path.resolve(__dirname, 'src/'),
+            '@pwa': path.resolve(__dirname, 'src/pwa/'),
             '@css': path.resolve(__dirname, 'src/styles/css/'),
             '@scss': path.resolve(__dirname, 'src/styles/scss/'),
             '@modules': path.resolve(__dirname, 'src/js/modules/'),

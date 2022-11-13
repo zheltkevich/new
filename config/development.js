@@ -12,6 +12,7 @@ const devServerConfig = {
     static: {
         directory: path.resolve(__dirname, '../public'),
     },
+    hot: 'only',
     compress: true,
     client: {
         logging: 'none',
@@ -22,7 +23,7 @@ const devServerConfig = {
 const pluginsConfig = [
     new HtmlWebpackPlugin({
         template: path.resolve(__dirname, '../public/index.html'),
-        title: 'Development',
+        title: 'Dev mode',
         alwaysWriteToDisk: true,
     }),
     new VueLoaderPlugin(),
