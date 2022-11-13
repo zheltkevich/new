@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvue_template=self.webpackChunkvue_template||[]).push([[842],{842:(e,t,u)=>{u.r(t),u.d(t,{default:()=>l});var n=u(252);const a={name:"NotFoundView"},l=(0,u(744).Z)(a,[["render",function(e,t,u,a,l,r){return(0,n.wg)(),(0,n.iD)("div",null,"NOT FOUND (404)")}]])}}]);
