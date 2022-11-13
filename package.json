@@ -26,7 +26,8 @@
         "dev": "webpack serve --node-env=development --open --hot --progress",
         "lint:css": "stylelint \"./src/**/*.{css,sass,scss,vue}\" --quiet --fix",
         "lint:js": "eslint ./src --ext .js,.vue --quiet --fix",
-        "deploy-vercel": "sh ./scripts/deploy-vercel.sh"
+        "deploy-vercel": "sh ./scripts/deploy-vercel.sh",
+        "deploy-dist": "sh ./scripts/deploy-dist.sh"
     },
     "gitHooks": {
         "pre-commit": "lint-staged"
