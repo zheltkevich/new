@@ -5,11 +5,14 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-body {
+#app { // stylelint-disable-line selector-max-id
     display: grid;
     grid-template-rows: auto 1fr auto;
-    overflow: overlay;
     min-height: 100vh;
+}
+
+body {
+    overflow: overlay;
     margin: 0;
     font-family:
         Montserrat,

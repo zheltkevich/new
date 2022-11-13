@@ -10,6 +10,13 @@
                 </p>
             </section>
             <section class="cards">
+                <router-link to="/">
+                    Home
+                </router-link>
+                ||
+                <router-link to="/about">
+                    About
+                </router-link>
                 <h2 class="cards__title text2">
                     Contains:
                 </h2>

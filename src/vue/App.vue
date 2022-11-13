@@ -1,11 +1,4 @@
 <template>
-    <router-link to="/">
-        Home
-    </router-link>
-    ||
-    <router-link to="/about">
-        About
-    </router-link>
     <router-view :key="$route.path" />
 </template>
 
@@ -33,9 +26,3 @@ export default {
     },
 };
 </script>
-
-<style lang="scss">
-.test {
-    padding: 12px;
-}
-</style>
