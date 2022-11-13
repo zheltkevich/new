@@ -1,4 +1,7 @@
 export const setupInstallButton = element => {
+    // eslint-disable-next-line no-console
+    console.log('setupInstallButton');
+
     let promptEvent = null;
     const installButton = element;
 
@@ -25,6 +28,8 @@ export const setupInstallButton = element => {
     };
 
     window.addEventListener('beforeinstallprompt', event => {
+        // eslint-disable-next-line no-console
+        console.log('beforeinstallprompt');
         event.preventDefault();
         promptEvent = event;
         installButton.style.display = 'flex';
