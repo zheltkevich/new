@@ -24,7 +24,7 @@ export default {
         },
     },
     mounted() {
-        this.initAppInstall(true);
+        this.initAppInstall();
         this.testMethod();
     },
 };
