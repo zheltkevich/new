@@ -7,6 +7,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
+
 // Configs
 const devtoolConfig = 'source-map';
 const devServerConfig = {
@@ -51,11 +52,6 @@ const pluginsConfig = [
     new ESLintPlugin({
         files: [path.resolve(__dirname, '../src/**/*.{vue,js}')],
         fix: true,
-    }),
-    new GenerateSW({
-        cleanupOutdatedCaches: true,
-        skipWaiting: true,
-        clientsClaim: true,
     }),
 ];
 const moduleConfig = {
@@ -103,6 +99,28 @@ const outputConfig = {
     filename: 'js/[name].js',
     clean: true,
 };
+
+const updatePluginsConfig = () => { // eslint-disable-line no-unused-vars
+    const workboxPlugin = new GenerateSW({
+        cleanupOutdatedCaches: true,
+        skipWaiting: true,
+        clientsClaim: true,
+    });
+
+    Object.defineProperty(workboxPlugin, 'alreadyCalled', {
+        get() {
+            return false;
+        },
+        set() {
+            console.log('Setting alreadyCalled property'); // eslint-disable-line no-console
+        },
+    });
+
+    pluginsConfig.push(workboxPlugin);
+};
+
+// Uncomment next line if working workbox in dev mode needed
+// updatePluginsConfig();
 
 module.exports = ({
     devtoolConfig,

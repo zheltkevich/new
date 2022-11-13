@@ -2,13 +2,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__buttons-wrapper">
-                <a
-                    id="install-button"
+                <PwaInstallButton
                     class="footer__button surface2-cta rad-shadow-cta hover"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Install App
-                </a>
+                    type="button" />
                 <a
                     class="footer__button surface2-cta rad-shadow-cta hover"
                     href="https://github.com/zheltkevich/template#readme"
@@ -22,7 +18,11 @@
 </template>
 
 <script>
+import PwaInstallButton from '@components/pwa/PwaInstallButton.vue';
 export default {
     name: 'MainFooter',
+    components: {
+        PwaInstallButton,
+    },
 };
 </script>

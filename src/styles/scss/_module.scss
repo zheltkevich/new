@@ -58,9 +58,14 @@ p {
     margin-bottom: 0;
 }
 
-a {
+a,
+button {
     font-weight: 600;
     font-size: 16px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .install-button {
