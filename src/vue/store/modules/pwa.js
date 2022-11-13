@@ -29,13 +29,17 @@ export default {
                 state.deferredPrompt = null;
             });
         },
-        INIT_APP_INSTALL: state => {
+        INIT_APP_INSTALL: (state, payload) => {
             window.addEventListener('beforeinstallprompt', e => {
                 // Prevent the mini-infobar from appearing on mobile
                 e.preventDefault();
                 // Stash the event so it can be triggered later.
+                // eslint-disable-next-line no-console
+                console.log('payload: ', payload);
                 state.deferredPrompt = e;
-                state.showPromotion = true;
+                state.showPromotion = payload;
+                // eslint-disable-next-line no-console
+                console.log('state.showPromotion: ', state.showPromotion);
                 // Update UI notify the user they can install the PWA
                 // showInstallPromotion();
                 // Optionally, send analytics event that PWA install promo was shown.
