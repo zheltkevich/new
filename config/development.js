@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
 // Configs
@@ -50,6 +51,11 @@ const pluginsConfig = [
     new ESLintPlugin({
         files: [path.resolve(__dirname, '../src/**/*.{vue,js}')],
         fix: true,
+    }),
+    new GenerateSW({
+        cleanupOutdatedCaches: true,
+        skipWaiting: true,
+        clientsClaim: true,
     }),
 ];
 const moduleConfig = {

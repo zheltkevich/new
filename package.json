@@ -22,8 +22,9 @@
     },
     "scripts": {
         "build": "webpack --node-env=production --progress",
-        "build-audit": "webpack --node-env=development --watch --progress & npx http-server dist --proxy http://127.0.0.1:8081/",
+        "audit-dist": "webpack --node-env=production --progress && npx http-server dist",
         "dev": "webpack serve --node-env=development --open --hot --progress",
+        "dev-dist": "webpack --node-env=development --progress && npx http-server dist",
         "lint:css": "stylelint \"./src/**/*.{css,sass,scss,vue}\" --quiet --fix",
         "lint:js": "eslint ./src --ext .js,.vue --quiet --fix",
         "deploy-vercel": "sh ./scripts/deploy-vercel.sh",
@@ -73,6 +74,7 @@
         "webpack": "^5.75.0",
         "webpack-cli": "^4.10.0",
         "webpack-dev-server": "^4.11.1",
+        "workbox-webpack-plugin": "^6.5.4",
         "yorkie": "^2.0.0"
     }
 }

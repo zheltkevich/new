@@ -3,7 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-// const { GenerateSW } = require('workbox-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
@@ -38,11 +38,11 @@ const pluginsConfig = [
             },
         ],
     }),
-    // new GenerateSW({
-    //     cleanupOutdatedCaches: true,
-    //     skipWaiting: true,
-    //     clientsClaim: true,
-    // }),
+    new GenerateSW({
+        cleanupOutdatedCaches: true,
+        skipWaiting: true,
+        clientsClaim: true,
+    }),
     new MiniCssExtractPlugin({
         filename: 'styles/[contenthash].css',
         chunkFilename: 'styles/[contenthash].css',

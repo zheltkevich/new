@@ -11,17 +11,17 @@ export const COLOR_SCHEMES = [
     {
         id: 'light',
         name: 'Light',
-        curtainColor: 'hsl(200 25% 90%)',
+        curtainColor: '#dfe8ec', // hsl(200 25% 90%)
     },
     {
         id: 'dark',
         name: 'Dark',
-        curtainColor: 'hsl(200 10% 10%)',
+        curtainColor: '#171a1c', // hsl(200 10% 10%)
     },
     {
         id: 'dim',
         name: 'Dim',
-        curtainColor: 'hsl(200 10% 20%)',
+        curtainColor: '#2e3538', // hsl(200 10% 20%)
     },
 ];
 
