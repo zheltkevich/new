@@ -12,7 +12,10 @@ import setupInstallButton from '@pwa/setupInstallButton.js';
 export default {
     name: 'PwaInstallButton',
     mounted() {
-        setupInstallButton(this.$refs?.pwaInstallButton);
+        // eslint-disable-next-line no-console
+        console.log('mounted: ', this.$refs.pwaInstallButton);
+
+        if (this.$refs.pwaInstallButton) setupInstallButton(this.$refs.pwaInstallButton);
     },
 };
 </script>
