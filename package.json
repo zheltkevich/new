@@ -18,11 +18,11 @@
         "url": "https://github.com/zheltkevich/new/issues"
     },
     "homepage": "https://github.com/zheltkevich/new#readme",
-    "private": true,
     "engines": {
         "npm": ">=8.0.0 <9.0.0",
         "node": ">=16.0.0 <19.0.0"
     },
+    "private": true,
     "scripts": {
         "build": "webpack --node-env=production --progress",
         "audit-dist": "webpack --node-env=production --progress && npx http-server dist",
