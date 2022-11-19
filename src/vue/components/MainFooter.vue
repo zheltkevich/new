@@ -8,7 +8,7 @@
                     type="button" />
                 <a
                     class="footer__button surface2-cta rad-shadow-cta hover"
-                    href="https://github.com/zheltkevich/template#readme"
+                    href="https://github.com/zheltkevich/template-pwa#readme"
                     target="_blank"
                     rel="noopener noreferrer">
                     Get started

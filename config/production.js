@@ -18,7 +18,7 @@ const devServerConfig = {
 const pluginsConfig = [
     new HtmlWebpackPlugin({
         template: path.resolve(__dirname, '../public/index.html'),
-        title: 'Vue Template',
+        title: 'Template PWA',
         alwaysWriteToDisk: true,
     }),
     new VueLoaderPlugin(),

@@ -1,3 +1,6 @@
+#### About
+A ready-to-use template for easily launching a frontend project containing PWA technology. Based on webpack@5, vue@3, eslint@8, stylelint@14.
+
 #### Required:
 **`node`** >=16.0.0 <19.0.0  
 **`npm`** >=8.0.0 <9.0.0  

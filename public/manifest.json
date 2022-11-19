@@ -1,11 +1,11 @@
 {
-    "name": "Template",
-    "short_name": "Template",
+    "name": "Template PWA",
+    "short_name": "Template PWA",
     "orientation": "any",
     "display": "standalone",
     "id": "/",
     "start_url": ".",
-    "description": "Ready to go template for a frontend project easy launch",
+    "description": "A ready-to-use template for easily launching a frontend project containing PWA technology. Based on webpack@5, vue@3, eslint@8, stylelint@14.",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "icons": [
