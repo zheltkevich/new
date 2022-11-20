@@ -11,7 +11,7 @@
                     href="https://github.com/zheltkevich/template-pwa#readme"
                     target="_blank"
                     rel="noopener noreferrer">
-                    Get started
+                    Go to GitHub
                 </a>
             </div>
         </div>
