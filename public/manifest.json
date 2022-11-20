@@ -4,10 +4,10 @@
     "orientation": "any",
     "display": "standalone",
     "id": "/",
-    "start_url": ".",
+    "start_url": "/index.html?from=homescreen",
     "description": "A ready-to-use template for easily launching a frontend project containing PWA technology. Based on webpack@5, vue@3, eslint@8, stylelint@14.",
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#dfe8ec",
+    "background_color": "#dfe8ec",
     "icons": [
         {
             "src": "./assets/icons/app/app-icon-72x72.png",

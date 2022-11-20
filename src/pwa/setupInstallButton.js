@@ -1,6 +1,5 @@
 export const setupInstallButton = element => {
-    // eslint-disable-next-line no-console
-    console.log('setupInstallButton');
+    console.log('setupInstallButton'); // eslint-disable-line no-console
 
     let promptEvent = null;
     const installButton = element;
@@ -12,11 +11,9 @@ export const setupInstallButton = element => {
         promptEvent.userChoice.then(choise => {
             if (choise.outcome === 'accepted') {
                 installButton.style.display = 'none';
-                // eslint-disable-next-line no-console
-                console.log('Application install was accepted');
+                console.log('Application install was accepted'); // eslint-disable-line no-console
             } else {
-                // eslint-disable-next-line no-console
-                console.log('Application install was declined by user');
+                console.log('Application install was declined by user'); // eslint-disable-line no-console
             }
 
             promptEvent = null;
@@ -28,12 +25,15 @@ export const setupInstallButton = element => {
     };
 
     window.addEventListener('beforeinstallprompt', event => {
-        // eslint-disable-next-line no-console
-        console.log('beforeinstallprompt');
+        console.log('beforeinstallprompt'); // eslint-disable-line no-console
         event.preventDefault();
         promptEvent = event;
         installButton.style.display = 'flex';
         listenUserAction();
+    });
+
+    window.addEventListener('appinstalled', event => {
+        console.log('Application was installed', event); // eslint-disable-line no-console
     });
 };
 
