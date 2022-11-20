@@ -30,6 +30,7 @@
         "dev-dist": "webpack --node-env=development --progress && npx http-server dist",
         "lint:css": "stylelint \"./src/**/*.{css,sass,scss,vue}\" --quiet --fix",
         "lint:js": "eslint ./src --ext .js,.vue --quiet --fix",
+        "lint": "lint:css && lint:js",
         "deploy-vercel": "sh ./scripts/deploy-vercel.sh",
         "deploy-dist": "sh ./scripts/deploy-dist.sh"
     },
