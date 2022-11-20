@@ -1,7 +1,7 @@
 {
     "name": "template-pwa",
-    "version": "1.0.0",
-    "description": "A ready-to-use template for easily launching a frontend project containing PWA technology. Based on webpack@5, vue@3, eslint@8, stylelint@14.",
+    "version": "1.0.1",
+    "description": "A ready-to-use template for easily launching a frontend project containing PWA technology. Based on webpack@5 and vue@3, contains eslint@8 and stylelint@14.",
     "keywords": [
         "pwa",
         "webpack",

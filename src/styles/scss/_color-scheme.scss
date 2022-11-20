@@ -209,6 +209,13 @@ $trs: 0.2s ease-out;
     @include color-scheme-transition;
 }
 
+.text-bold {
+    color: var(--text2);
+    font-weight: 600;
+
+    @include color-scheme-transition;
+}
+
 .rad-shadow {
     border: 1px solid hsla(var(--brand-hue) 10% 50% / 0.15);
     box-shadow:

@@ -6,7 +6,8 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
-
+const process = require('process');
+const appVersion = process.env.npm_package_version;
 
 // Configs
 const devtoolConfig = 'source-map';
@@ -25,7 +26,7 @@ const devServerConfig = {
 const pluginsConfig = [
     new HtmlWebpackPlugin({
         template: path.resolve(__dirname, '../public/index.html'),
-        title: 'Dev mode',
+        title: `Dev mode (v${appVersion})`,
         alwaysWriteToDisk: true,
     }),
     new VueLoaderPlugin(),

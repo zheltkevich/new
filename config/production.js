@@ -6,6 +6,9 @@ const CopyPlugin = require('copy-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const process = require('process');
+const appVersion = process.env.npm_package_version;
+
 
 // Configs
 const devtoolConfig = false;
@@ -18,7 +21,7 @@ const devServerConfig = {
 const pluginsConfig = [
     new HtmlWebpackPlugin({
         template: path.resolve(__dirname, '../public/index.html'),
-        title: 'Template PWA',
+        title: `Template PWA (v${appVersion})`,
         alwaysWriteToDisk: true,
     }),
     new VueLoaderPlugin(),
