@@ -1,0 +1,36 @@
+<template>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <svg
+                    class="logo text2 rad-shadow"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none">
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M20 38C29.9411 38 38 29.9411 38 20C38 10.0589 29.9411 2 20 2C10.0589 2 2 10.0589 2 20C2 29.9411 10.0589 38 20 38ZM20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95431 0 0 8.95431 0 20C0 31.0457 8.95431 40 20 40Z"
+                        fill="#2B2B2B" />
+                    <path
+                        d="M20 30C21.9778 30 23.9112 29.4135 25.5557 28.3147C27.2002 27.2159 28.4819 25.6541 29.2388 23.8268C29.9957 21.9996 30.1937 19.9889 29.8078 18.0491C29.422 16.1093 28.4696 14.3275 27.0711 12.9289C25.6725 11.5304 23.8907 10.578 21.9509 10.1922C20.0111 9.8063 18.0004 10.0043 16.1732 10.7612C14.3459 11.5181 12.7841 12.7998 11.6853 14.4443C10.5865 16.0888 10 18.0222 10 20L20 20L20 30Z"
+                        fill="#2B2B2B" />
+                </svg>
+                <SchemeSwitcher />
+            </div>
+        </div>
+    </header>
+</template>
+
+
+<script>
+import SchemeSwitcher from '@components/color-scheme/SchemeSwitcher.vue';
+
+export default {
+    name: 'MainHeader',
+    components: {
+        SchemeSwitcher,
+    },
+};
+</script>
